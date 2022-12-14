@@ -39,12 +39,12 @@ pipeline{
             }           
         }
         stage("Checking the Quality Gate") {
-           steps {
+            steps {
                 echo "====++++  Checking the returned SonarQube Quality Gate ++++===="
 		sleep(30)
                 timeout(time: 1, unit: 'HOURS') {
-                     Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
-                     true = set pipeline to UNSTABLE, false = don't
+                    // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
+                    // true = set pipeline to UNSTABLE, false = don't
                     waitForQualityGate abortPipeline: false
                 }
             }
