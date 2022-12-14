@@ -38,17 +38,17 @@ pipeline{
                }  
             }           
         }
-        stage("Checking the Quality Gate") {
-            steps {
-                echo "====++++  Checking the returned SonarQube Quality Gate ++++===="
-		sleep(30)
-                timeout(time: 1, unit: 'HOURS') {
+        //stage("Checking the Quality Gate") {
+           //steps {
+             //   echo "====++++  Checking the returned SonarQube Quality Gate ++++===="
+		//sleep(30)
+                //timeout(time: 1, unit: 'HOURS') {
                     // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
                     // true = set pipeline to UNSTABLE, false = don't
-                    waitForQualityGate abortPipeline: false
-                }
-            }
-        }        
+                  //  waitForQualityGate abortPipeline: false
+                //}
+            //}
+        //}        
         
         // Integration Test (Maven/JUnit)
         stage("Integration Test (Maven/JUnit)"){
